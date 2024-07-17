@@ -701,7 +701,7 @@ class ServiceGenerator {
   public getResponseTP(responses: ResponsesObject = {}) {
     const { components } = this.openAPIData;
     const response: ResponseObject | undefined =
-      responses && this.resolveRefObject(responses.default || responses['200'] || responses['201']);
+      responses && this.resolveRefObject(responses['200'] || responses.default || responses['201']);
     const defaultResponse = {
       mediaType: '*/*',
       type: 'any',
